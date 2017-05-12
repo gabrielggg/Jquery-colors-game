@@ -4,21 +4,276 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://creativecouple.github.com/jquery-timing/jquery-timing.min.js"></script>
+
+
+
+<style>
+.titu {
+
+    text-align: center;
+    
+    font-weight: bolder;
+    
+    color: blue;
+    font-size:60px; 
+}	
+
+.titu1 {
+	
+    text-align: center;
+    position:fixed;
+    bottom: 0;
+    right: 0;
+    
+    
+    font-weight: bolder;
+    
+    color: black;
+    font-size:20px; 
+}	
+
+.orange {
+    text-align: center;
+    cursor: pointer;
+    font-weight: bolder;
+    
+    color: orange;
+    
+}
+
+.verde {
+    text-align: center;
+    cursor: pointer;
+    font-weight: bolder;
+    
+    color: green;
+    font-size:30px; 
+}
+
+.rojo {
+    text-align: center;
+    cursor: pointer;
+    font-weight: bolder;
+    
+    color:red;
+    
+}
+
+.yellow {
+    text-align: center;
+    cursor: pointer;
+    font-weight: bolder;
+    
+    color: yellow;
+    
+}
+
+.purple {
+    text-align: center;
+     
+    cursor: pointer;
+    font-weight: bolder;
+    
+    color: purple;
+    font-size:30px; 
+    
+}
+
+</style>
+
+<script>
+var count1= 1;
+$(document).click(function() {
+	
+	count1++;
+	if(count1>=10)
+	{
+		alert("perdiste");
+	}
+   
+   
+});
+
+
+
+function Slider(){
+	var count= 1;
+	var platano=0;
+	var manzana=0;
+	var uva=0;
+	var mandarina=0;
+	var pera=0;
+
+$("#1").click(function() {
+	
+	if ($(this).hasClass("yellow")){
+	var myClass = this.className;
+	alert("acertaste");
+	platano=1;
+	}else{
+		alert("fallaste");
+	}
+   
+   
+});
+
+$("#2").click(function() {
+	
+	if ($(this).hasClass("rojo")){
+	var myClass = this.className;
+	alert("acertaste");
+	manzana=1;
+	}else{
+		alert("fallaste");
+	}
+   
+   
+});
+
+$("#3").click(function() {
+	
+	if ($(this).hasClass("purple")){
+	var myClass = this.className;
+	alert("acertaste");
+	uva=1;
+	}else{
+		alert("fallaste");
+	}
+   
+   
+});
+
+$("#4").click(function() {
+	
+	if ($(this).hasClass("orange")){
+	var myClass = this.className;
+	alert("acertaste");
+	mandarina=1;
+	}else{
+		alert("fallaste");
+	}
+   
+   
+});
+
+$("#5").click(function() {
+	
+	if ($(this).hasClass("verde")){
+	var myClass = this.className;
+	alert("acertaste");
+	pera=1;
+	}else{
+		alert("fallaste");
+	}
+   
+   
+});
+
+setInterval(function(){
+if(count1>=10)
+	{
+		alert("perdiste");
+	}
+if (platano==1){
+$( "#1" ).remove();
+
+}
+
+if (manzana==1){
+	$( "#2" ).remove();
+
+}
+
+if (uva==1){
+	$( "#3" ).remove();
+
+}
+
+if (mandarina==1){
+	$( "#4" ).remove();
+
+}
+
+if (pera==1){
+	$( "#5" ).remove();
+
+}
+
+if(platano==1 & manzana==1 & mandarina==1 & pera==1 & uva==1){
+	alert("felicitaciones ganaste");
+}
+
+if (mandarina!=1){
+$(".lista #"+count).removeClass()
+$(".lista #"+count).addClass('orange')
+}
+if (pera!=1){
+$(".lista #"+(count-1)).removeClass()	
+$(".lista #"+(count-1)).addClass('verde')
+}
+if (manzana!=1){
+$(".lista #"+(count-2)).removeClass()
+$(".lista #"+(count-2)).addClass('rojo')
+}
+if (platano!=1){
+$(".lista #"+(count-3)).removeClass()
+$(".lista #"+(count-3)).addClass('yellow')
+}
+if (uva!=1){
+$(".lista #"+(count-4)).removeClass()
+$(".lista #"+(count-4)).addClass('purple')
+}
+
+
+
+//console.log(count);
+	count++;
+	if (count==8){
+		$( "li" ).each(function( i ) {
+    
+			
+			
+			
+			
+
+  });
+		count=3;
+	}
+},
+	
+100)};
+
+
+
+
+
+
+
+</script>
 
 </head>
-<body>
-
-	<div>
-		<nav>
-			<ul>
-				<li>platano</li>
-				<li>uva</li>
-				<li>pera</li>
-				<li>granadilla</li>
-				<li>mora</li>
-			</ul>
-		</nav>
-	</div>
+<body onload= "Slider();">
+	<header class="titu" > FRUTAS </header>
 	
+		
+	
+	<div class="lista">
+	<li id=1>platano</li>
+	<li id=2>manzana</li>
+	<li id=3>uva</li>
+	<li id=4>mandarina</li>
+	<li id=5>pera</li>
+ </div>	
+
+
+<h1 class=titu1>RELACIONA LAS FRUTAS CON SUS COLORES RESPECTIVOS Y CUANDO AMBAS COINCIDAN DALE CLICK (solo tienes 10 clicks disponibles despues de eso perderas)<h1> 
+
+
+ 
+
+
 </body>
 </html>
